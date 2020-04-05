@@ -50,6 +50,9 @@ The main components of the SEED node are the following:
 - **SEED Access Proxy**: The SEED proxy acts as a router and defensive firewall
   between all SEED components. It is responsible for routing SEED protocol
   messages between the various components and external entitites.
+- **SEED Host Controller**: The SEED host controller is a daemon responsible to
+  make changes to the host system outside Docker based on the system
+  configuration applied to the supervisor daemon.
 
 Service Architecture
 -----------------------------

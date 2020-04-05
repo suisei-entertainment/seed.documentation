@@ -65,6 +65,8 @@ interface plugin for CodeIntel.
   syntax highlighting for Dockerfile.
 * `Color Highlighter <https://packagecontrol.io/packages/Color%20Highlighter>`_: Underlays
   selected hexadecimal colorcodes.
+* `Terminus <https://github.com/randy3k/Terminus>`_: Allows opening terminals
+  inside Sublime 3.
 
 Directory Structure
 ----------------------------------
