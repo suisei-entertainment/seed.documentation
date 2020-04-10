@@ -4,26 +4,6 @@ Platform Architecture
 Overview
 -----------------------------
 
-Network Architecture
------------------------------
-
-- **Access Layer**: The access layer provides the entry point for all clients
-  to the various network services. For a detailed documentation of the access
-  layer, read the :doc:`access_layer` guide.
-- **Content Layer**: The content layer is responsible for storing all
-  persisted data associated with the platform, including database data, updates
-  or user created content. For a detailed documentation of the content layer,
-  read the :doc:`content_layer` guide.
-- **Control Layer**: The control layer is responsible for the management of
-  the platform. For a detailed documentation of the control layer, read the
-  :doc:`control_layer` guide.
-- **Realm Layer**: The realm layer is responsible for running the simulation of
-  all realms. For a detailed documentation of the realm layer, read the
-  :doc:`realm_layer` guide.
-- **Service Layer**: The service layer is responsible for running services not
-  directly associated with realms. For a detailed documentation of the service
-  layer, read the :doc:`service_layer` guide.
-
 Node Architecture
 -----------------------------
 
@@ -54,8 +34,52 @@ The main components of the SEED node are the following:
   make changes to the host system outside Docker based on the system
   configuration applied to the supervisor daemon.
 
+Network Architecture
+-----------------------------
+
+All SEED nodes are part of a single SEED network and provide various services
+to the whole network. The network is organized into various layers based on
+the functionality of services running in that layer. The following layers
+exist:
+
+- **Access Layer**: The access layer provides the entry point for all clients
+  to the various network services. For a detailed documentation of the access
+  layer, read the :doc:`access_layer` guide.
+- **Content Layer**: The content layer is responsible for storing all
+  persisted data associated with the platform, including database data, updates
+  or user created content. For a detailed documentation of the content layer,
+  read the :doc:`content_layer` guide.
+- **Control Layer**: The control layer is responsible for the management of
+  the platform. For a detailed documentation of the control layer, read the
+  :doc:`control_layer` guide.
+- **Realm Layer**: The realm layer is responsible for running the simulation of
+  all realms. For a detailed documentation of the realm layer, read the
+  :doc:`realm_layer` guide.
+- **Service Layer**: The service layer is responsible for running services not
+  directly associated with realms. For a detailed documentation of the service
+  layer, read the :doc:`service_layer` guide.
+
 Service Architecture
 -----------------------------
+
+Every network service can potenially be formed from services provided by
+multiple nodes to ensure the necessary processing capacity is always available
+for the network. Each service can contain the following functionalities:
+
+.. image:: ./diagrams/seed_service_architecture.png
+   :width: 1600px
+   :alt: SEED Server Structure
+   :align: center
+
+- **Balancers**: Balancer nodes in a service provide the access point to the
+  service for clients. Typically every service should have two balancers in a
+  1+1 hot-standby setup to ensure availability.
+- **Processors**: Processor nodes are responsible for processing requests sent
+  to the service. Typically they are organized into an M+N cold standby setup.
+- **Monitors**: Monitoring nodes are responsible for monitoring the operation
+  of the service, making sure it's operating withing its set limits, including
+  available capacity and security.
+
 
 Protocol
 -----------------------------
