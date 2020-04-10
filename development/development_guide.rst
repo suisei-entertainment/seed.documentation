@@ -34,7 +34,7 @@ Sublime packages useful:
 * `Sublime Linter - pylint <https://github.com/SublimeLinter/SublimeLinter-pylint>`_:
   A linter plugin for Sublime Linter that executes pylint.
 * `SublimeCodeIntel <https://packagecontrol.io/packages/SublimeCodeIntel>`_: An
-interface plugin for CodeIntel.
+  interface plugin for CodeIntel.
 * `A File Icon <https://github.com/sublimetext/afileicon>`_: Adds file type
   specific icons to Sublime Text 3.
 * `Bracket Highlighter <https://github.com/facelessuser/BracketHighlighter>`_:
@@ -78,7 +78,7 @@ The top level directory structure of the repository is the following:
 * **.git**: The directory containing Git internals. Do not touch, unless you
   absolutely know what you are doing.
 * **assets**: Contains all binary assets, typically images and other media
-+ * **doc**: Contains the documentation of the platform.
+* **doc**: Contains the documentation of the platform.
 * **scripts**: Contains various utility scripts mainly utilized by CI.
 * **src**: Contains the source code of the various componets of the platform.
 * **templates**: Contains template files used by the various components.
