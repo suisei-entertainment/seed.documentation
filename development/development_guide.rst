@@ -67,6 +67,8 @@ Sublime packages useful:
   selected hexadecimal colorcodes.
 * `Terminus <https://github.com/randy3k/Terminus>`_: Allows opening terminals
   inside Sublime 3.
+* `PlainTasks <https://github.com/aziz/PlainTasks>`_: Simple todo management
+  plugin used by SEED.
 
 Directory Structure
 ----------------------------------
